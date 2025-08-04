@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - BETSHOP</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <main class="checkout-container">
+        <div class="container">
+            <div class="checkout-content">
+                <!-- Left Side - Customer Information -->
+                <div class="checkout-left">
+                    <div class="section-header">
+                        <h2>betashop-theme</h2>
+                    </div>
+
+                    <!-- Customer Information Form -->
+                    <div class="customer-info">
+                        <h3>Thông tin nhận hàng</h3>
+                        <form id="checkout-form">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="fullName" name="fullName" placeholder="Họ và tên" required>
+                            </div>
+                            
+                            <div class="form-group phone-group">
+                                <div class="country-code">
+                                    <img src="https://flagcdn.com/16x12/vn.png" alt="VN"> +84
+                                </div>
+                                <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="address" name="address" placeholder="Địa chỉ (tùy chọn)">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select id="province" name="province" required>
+                                        <option value="">Tỉnh thành</option>
+                                        <option value="hanoi">Hà Nội</option>
+                                        <option value="hcm">TP. Hồ Chí Minh</option>
+                                        <option value="hue">Thừa Thiên Huế</option>
+                                        <option value="danang">Đà Nẵng</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select id="district" name="district" required>
+                                        <option value="">Quận huyện (tùy chọn)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="notes" name="notes" placeholder="Ghi chú (tùy chọn)" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Shipping Method -->
+                    <div class="shipping-method">
+                        <h3>Vận chuyển</h3>
+                        <div class="shipping-option">
+                            <div class="shipping-info">
+                                <span class="shipping-text">Vui lòng nhập thông tin giao hàng</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="payment-method">
+                        <h3>Thanh toán</h3>
+                        <div class="payment-option">
+                            <input type="radio" id="cod" name="payment" value="cod" checked>
+                            <label for="cod">Thanh toán khi giao hàng (COD)</label>
+                            <span class="payment-icon">💵</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Order Summary -->
+                <div class="checkout-right">
+                    <div class="order-summary">
+                        <h3>Đơn hàng (<span id="item-count">1</span> sản phẩm)</h3>
+                        
+                        <div class="order-items" id="order-items">
+                            <!-- Order items will be populated by JavaScript -->
+                        </div>
+
+                        <div class="promo-code">
+                            <div class="promo-input-group">
+                                <input type="text" id="promo-code" placeholder="Nhập mã giảm giá">
+                                <button type="button" id="apply-promo">Áp dụng</button>
+                            </div>
+                        </div>
+
+                        <div class="order-totals">
+                            <div class="total-row">
+                                <span>Tạm tính</span>
+                                <span id="subtotal">0đ</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Phí vận chuyển</span>
+                                <span id="shipping-fee">—</span>
+                            </div>
+                            <div class="total-row total-final">
+                                <span>Tổng cộng</span>
+                                <span id="total-amount">0đ</span>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions">
+                            <a href="cart.html" class="back-to-cart">‹ Quay về giỏ hàng</a>
+                            <button type="submit" class="place-order-btn" id="place-order">ĐẶT HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="container">
+                <div class="footer-info-items">
+                    <div class="footer-info-item">
+                        <div class="info-icon">🚚</div>
+                        <div class="info-content">
+                            <h4>MIỄN PHÍ VẬN CHUYỂN</h4>
+                            <p>với đơn hàng trên 3 triệu</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">🔄</div>
+                        <div class="info-content">
+                            <h4>ĐỔI TRẢ HÀNG</h4>
+                            <p>trong vòng 3 ngày</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">💰</div>
+                        <div class="info-content">
+                            <h4>HOÀN TIỀN</h4>
+                            <p>nếu có lỗi</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>HỖ TRỢ 24/7</h4>
+                            <p>04.6674.2332</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-nav">
+                    <div class="footer-nav-item">
+                        <a href="home.html">TRANG CHỦ</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="gioithieu.html">GIỚI THIỆU</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">SẢN PHẨM</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">TIN TỨC</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">LIÊN HỆ</a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>123 Đường ABC, Quận XYZ, TP. Huế</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>0234.567.8910</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contact@betshop.vn</span>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📧</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">📱</a>
+                            <a href="#" class="social-icon">💼</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✅</div>
+            <h2>Đặt hàng thành công!</h2>
+            <p>Cảm ơn bạn đã mua hàng tại BETSHOP. Chúng tôi sẽ liên hệ với bạn sớm nhất để xác nhận đơn hàng.</p>
+            <div class="order-info">
+                <p><strong>Mã đơn hàng:</strong> <span id="order-id"></span></p>
+                <p><strong>Tổng tiền:</strong> <span id="final-total"></span></p>
+            </div>
+            <button class="continue-shopping-btn" onclick="window.location.href='home.html'">Tiếp tục mua sắm</button>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

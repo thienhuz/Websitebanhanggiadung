@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - BETSHOP</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">BET<span>SHOP</span></a>
+            </div>
+            <form id="search-form" class="search-bar">
+                <input id="search-input" type="text" placeholder="Tìm kiếm">
+                <button type="submit">🔍</button>
+            </form>
+            <div class="user-actions">
+                <div class="wishlist">
+                    <a href="#" id="wishlist-link">♡</a>
+                </div>
+                <div class="cart-info">
+                    <a href="cart.html" id="cart-link">🛒 <span id="cart-count">(4) sản phẩm</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#">Sản phẩm ▾</a>
+                    <div class="dropdown-content">
+                        <a href="home.html?filter=kitchen">Đồ dùng nhà bếp</a>
+                        <a href="home.html?filter=cleaning">Đồ dùng vệ sinh</a>
+                        <a href="home.html?filter=electronics">Thiết bị điện</a>
+                    </div>
+                </li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="cart-container">
+        <div class="container">
+            <div class="cart-content">
+                <div class="cart-table-container">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="empty-cart-message" class="empty-cart" style="display: none;">
+                        <h3>Giỏ hàng của bạn đang trống</h3>
+                        <p>Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm</p>
+                        <a href="home.html" class="continue-shopping-btn">Tiếp tục mua sắm</a>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="total-section">
+                        <div class="total-row">
+                            <span class="total-label">Tổng tiền thanh toán:</span>
+                            <span class="total-amount" id="total-amount">0đ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="continue-btn" onclick="window.location.href='home.html'">
+                            TIẾP TỤC MUA HÀNG
+                        </button>
+                        <button class="checkout-btn" id="checkout-btn">
+                            THỰC HIỆN THANH TOÁN
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="container">
+                <div class="footer-info-items">
+                    <div class="footer-info-item">
+                        <div class="info-icon">🚚</div>
+                        <div class="info-content">
+                            <h4>MIỄN PHÍ VẬN CHUYỂN</h4>
+                            <p>với đơn hàng trên 3 triệu</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">🔄</div>
+                        <div class="info-content">
+                            <h4>ĐỔI TRẢ HÀNG</h4>
+                            <p>trong vòng 3 ngày</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">💰</div>
+                        <div class="info-content">
+                            <h4>HOÀN TIỀN</h4>
+                            <p>nếu có lỗi</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>HỖ TRỢ 24/7</h4>
+                            <p>04.6674.2332</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-nav">
+                    <div class="footer-nav-item">
+                        <a href="home.html">TRANG CHỦ</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="gioithieu.html">GIỚI THIỆU</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">SẢN PHẨM</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">TIN TỨC</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">LIÊN HỆ</a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>123 Đường ABC, Quận XYZ, TP. Huế</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>0234.567.8910</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contact@betshop.vn</span>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📧</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">📱</a>
+                            <a href="#" class="social-icon">💼</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

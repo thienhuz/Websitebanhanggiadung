@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BETSHOP - Trang chủ</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">BETSHOP</a>
+            </div>
+            <form id="search-form" class="search-bar">
+                <input id="search-input" type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit">🔍</button>
+            </form>
+            <div class="user-actions">
+                <div class="cart-dropdown-container">
+                    <a href="cart.html" id="cart-link">🛒 sản phẩm<span id="cart-count"></span></a>
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <div class="cart-dropdown-header">
+                            <span>Giỏ hàng</span>
+                            <span id="cart-item-count">(3) sản phẩm</span>
+                        </div>
+                        <div class="cart-dropdown-items" id="cart-dropdown-items">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </div>
+                        <div class="cart-dropdown-footer">
+                            <div class="cart-total">
+                                <span>Tổng tiền: <span id="dropdown-total-price">29.490.000đ</span></span>
+                            </div>
+                            <button class="view-cart-btn" id="view-cart-btn">GIỎ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="login-button">Đăng nhập</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#">Sản phẩm ▾</a>
+                    <div class="dropdown-content">
+                        <a href="home.html?filter=kitchen" data-filter="kitchen">Đồ dùng nhà bếp</a>
+                        <a href="home.html?filter=cleaning" data-filter="cleaning">Đồ dùng vệ sinh</a>
+                        <a href="home.html?filter=electronics" data-filter="electronics">Thiết bị điện</a>
+                    </div>
+                </li>
+                <li><a href="#">Khuyến mãi</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-content container">
+        <aside class="sidebar">
+            <h3>DANH MỤC SẢN PHẨM</h3>
+            <ul class="category-menu">
+                <li><a href="#" data-filter="all">Tất cả sản phẩm</a></li>
+                <li>
+                    <div class="collapsible">
+                        <a>Sản phẩm</a>
+                        <span class="arrow">▶</span>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#" data-filter="kitchen">Đồ dùng nhà bếp</a></li>
+                        <li><a href="#" data-filter="cleaning">Đồ dùng vệ sinh</a></li>
+                        <li><a href="#" data-filter="electronics">Thiết bị điện</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+            
+            <!-- Price Filter Section -->
+            <div class="price-filter-section">
+                <h3>KHOẢNG GIÁ</h3>
+                <div class="price-filter">
+                    <div class="price-inputs">
+                        <input type="number" id="min-price" placeholder="100000" min="0">
+                        <input type="number" id="max-price" placeholder="15000000" min="0">
+                    </div>
+                    <button id="apply-price-filter" class="apply-price-btn">Áp dụng</button>
+                    <button id="clear-price-filter" class="clear-price-btn">Xóa bộ lọc</button>
+                </div>
+            </div>
+            
+            <div class="hot-products">
+                <h4>HÀNG HOT</h4>
+                <div class="hot-product-item">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/vn/ua43du7000kxxv/gallery/vn-crystal-uhd-du7000-496212-ua43du7000kxxv-539907633?$684_547_PNG$" alt="Smart Tivi">
+                    <p>SMART TIVI 4K</p>
+                    <p>11.500.000đ</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div id="search-results-message" style="display: none; margin-bottom: 20px;"></div>
+            <div id="price-filter-message" style="display: none; margin-bottom: 20px;"></div>
+            <div class="product-grid-header">
+                <h3>SẢN PHẨM</h3>
+                <div>
+                    Sắp xếp theo:
+                    <select id="sort-select">
+                        <option value="default">Mới nhất</option>
+                        <option value="price-desc">Giá cao đến thấp</option>
+                        <option value="price-asc">Giá thấp đến cao</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card kitchen" data-price="750000">
+                    <img src="https://winci.com.vn/wp-content/uploads/2025/01/May-Pha-Ca-Phe-Espresso-Winci-CM3000-Pro-truc-dien-1000x1000.jpg" alt="Máy pha cà phê">
+                    <h4>MÁY PHA CÀ PHÊ</h4>
+                    <p class="price">750.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="1200000">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTm6cEacAdIcuXHO2UlDGJZ5MEYH-rFN1elze37biJPZsFrszOcfrWr9wvDZ0FU-r0BTl3LHXaFIjuORfc-okxg6Ln-ZFbgiUm79xPAqnBCqQSrVbgqJhtZFibFf80MGhKirBSchQ&usqp=CAc" alt="Máy ép trái cây">
+                    <h4>MÁY ÉP TRÁI CÂY</h4>
+                    <p class="price">1.200.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="350000">
+                    <img src="https://st.meta.vn/Data/image/2021/12/15/am-sieu-toc-nagakawa-1-8l-nag0308-g.jpg" alt="Ấm đun siêu tốc">
+                    <h4>ẤM ĐUN SIÊU TỐC</h4>
+                    <p class="price">350.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="450000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRIiZGOLYpCWm0uULwYaWvy2IAeQOcV1nQHQ69af_9eHa0Qiid-x4P7a5aroJPh1QpZLfEWyspt-AdgCARapULY5o4rB6oDG27kr7jAJpaMBYqByCn9rDFwwx5Rkf-KYTYiHPtCsAlKYA&usqp=CAc" alt="Máy xay sinh tố">
+                    <h4>MÁY XAY SINH TỐ</h4>
+                    <p class="price">450.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="600000">
+                    <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/441/580/products/thiet-ke-chua-co-ten-65.png?v=1684136922120" alt="Máy xay thịt">
+                    <h4>MÁY XAY THỊT</h4>
+                    <p class="price">600.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="1800000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS4eal-nd0xeDKvZh-YZZejpdLvOOpGWDSkhQiLwnQeP0UPjydgTveVgjfZFyUzrjo0XGLm688WCvXwx0AQ_vAsGZWUA25Yfb5GP_4-BW2WXAOFaWXPcXpYLo4ewDMy0yV8_MTDRNXhlg&usqp=CAc" alt="Nồi chiên không dầu">
+                    <h4>NỒI CHIÊN KHÔNG DẦU</h4>
+                    <p class="price">1.800.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="2500000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ_3_dlB0YqhwdTA1SY1WnXJp2ZBlnYqwk5T4d3fy1y5m-sf4Uos6MNlUz6ZhXt1laYHgf4bMB3JLVC35z2By1xKX5KFwhaVlRvZ9B3F8BYjJ-s7Ny1e3s5K2-thXQiAMB7SUUhz2KLFSE&usqp=CAc" alt="Lò vi sóng">
+                    <h4>LÒ VI SÓNG</h4>
+                    <p class="price">2.500.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card kitchen" data-price="950000">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTxWq1ZXMybDCjv-eoEbKL2OW6NV9hiH3bv3Sx41Sv19ifSOqhsmtP_aTDsAMaU4sCTLGdZPqpoNKNfdxK9G3ThBIlnE5c1wl_WmWl8XupLKKqMzn8AV-uraimmNIHg3_4UoDj55A&usqp=CAc" alt="Bộ nồi inox">
+                    <h4>BỘ NỒI INOX</h4>
+                    <p class="price">950.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card cleaning" data-price="5500000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT66tTJtQ-Jz3KsVsGFYNpy4S7UimcFGpwpPD5KcRmx88L3uuI5XgCZeXbJ6zkv5AQ03h1sI8JPpnCFzG-QncPTvc52gyspy1hY88FXzzz7G5VxpouySvyqgOBjJ87FQwvuoZ0mMQE&usqp=CAc" alt="Robot hút bụi">
+                    <h4>ROBOT HÚT BỤI</h4>
+                    <p class="price">5.500.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card cleaning" data-price="1100000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ7tcBN5ELMKcpZ4S6QMQ97NLRsW6bt8ObGmM7FuDHlBvtYQsuGuCRbMVlC1UFX5krd2Bsf2oSiuM-1L8R8XuQcwJQRNkwBJHdWdk2hQK25zaVnbo9v75b_Rw&usqp=CAc" alt="Máy hút bụi cầm tay">
+                    <h4>MÁY HÚT BỤI CẦM TAY</h4>
+                    <p class="price">1.100.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card cleaning" data-price="400000">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT5JEgfSdXrtw7fdp7_lUtWnJ4O4i-UagqzH5W5q4mBFZfHZwSzJ03zL5ZdA8KApYlX_Z_w7MR86UmTY9aJtG12EEp08G39PXmbFF1pD6bRI1VxDTq8RDmja0l_Kdlw4w&usqp=CAc" alt="Cây lau nhà tự vắt">
+                    <h4>CÂY LAU NHÀ TỰ VẮT</h4>
+                    <p class="price">400.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card cleaning" data-price="3200000">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT8LtiVbzlG5tVF1bRzj_zXl-0L915zaEcPCPSzA7F-metjomdJ9eKUlw-qkU6C9ovNWYTHmz1fGltYcn7jo41_6OW47btN-qz5UgraudEoeW6oWmasJ2sv" alt="Máy lọc không khí">
+                    <h4>MÁY LỌC KHÔNG KHÍ</h4>
+                    <p class="price">3.200.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card cleaning" data-price="800000">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRLnJkNyqVztaGb8nVxA2ajUENguvw7e-VKprBj05WQpTWm71DZYCOuP0hBibOucHMqCowBqoSTfY-uTr88-M6RI8IzNGc9DHTervQNT3bwsAkI7Gq-DXkz" alt="Thùng rác thông minh">
+                    <h4>THÙNG RÁC THÔNG MINH</h4>
+                    <p class="price">800.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="12500000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLzXqmpgaiW7lHrjAohXTcwfG-jrmmb1J3a-ZT_S6i80JagykNUIHFhtI0_bUUHXOstVYmBSq0Vo401pvf44HErXf7zcvPH7TUcRhg_QiWE9b3vF9udUkT8k6Pr0B3S2q5lSFz7qg&usqp=CAc" alt="Tivi smart 4K 55 inch">
+                    <h4>TIVI SMART 4K 55 INCH</h4>
+                    <p class="price">12.500.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="21000000">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTF64UcyAVeFY9vPKUdkK9wqUtKOOuxf1Ocan_mv3Ou-mJL7lYVRzsRUtBfnAgci9l9HsJBIM6v8oUS_SpivU-ak8UmzFXa7YFJ0wjJmt2Zv6MiMtGJwSX2" alt="Tủ lạnh side by side">
+                    <h4>TỦ LẠNH SIDE BY SIDE</h4>
+                    <p class="price">21.000.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="8700000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT9cI9rh1yHqEYRTPHDB4BMxLeh2gHKfoLXqr4IDvC4-yxV88bDFUHM6Jhmk4TZN1Yau8mUM27vLIc0OCunBZRCPPIYXWCvemENoRK3jSwEQ7iexK4nKWSVNwO79FqLRcGBQbSd-GaWsUA&usqp=CAc" alt="Máy giặt cửa trước">
+                    <h4>MÁY GIẶT CỬA TRƯỚC</h4>
+                    <p class="price">8.700.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="9200000">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSebDE0rO8IforrcJg-g-qo_3vfmw9UACGNpqQiJoQVxU4E3vahw-C1DgMJmkup8EanRJO8Vv-417OcXJdLAAk3CivnignJzRGQVVothpCNHThZA43-67GESxgd1mPnWTJXGdVAGw&usqp=CAc" alt="Điều hòa inverter">
+                    <h4>ĐIỀU HÒA INVERTER</h4>
+                    <p class="price">9.200.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="1500000">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcToOfRl2wkAifz-z7noJCHSfIgBTEoyPcKROrm5AzWi9Er1Np5hr_XS8La6gFJP_bdFoUPGoDQVxdmVINwKiQyauVNhfuX1A1SdKLWhjb4InRpAX1b3FKc6okvrMF27JqqYsR_YvS80-r8&usqp=CAc" alt="Loa bluetooth">
+                    <h4>LOA BLUETOOTH</h4>
+                    <p class="price">1.500.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="2100000">
+                    <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/313694/tai-nghe-bluetooth-chup-tai-sony-wh-ch520-210425-043507-151-600x600.jpg" alt="Tai nghe không dây">
+                    <h4>TAI NGHE KHÔNG DÂY</h4>
+                    <p class="price">2.100.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="700000">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS0OJOGeh2C17BG0lplp76M2pgrBKwBThY9yCBtBPPM95170scjxc3E5fu06NAmCSn_32pk3C1lNwk-i6IblgvHeGdcwQacCyvLtEDOa3_aXpV-Qh5Bv5LgtwRJs9YC5OTTiXCnBtFC2A&usqp=CAc" alt="Bàn là hơi nước">
+                    <h4>BÀN LÀ HƠI NƯỚC</h4>
+                    <p class="price">700.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="550000">
+                    <img src="https://cdn.tgdd.vn/Products/Images/1991/240398/flyco-fh6277vn-020223-104951-600x600.jpg" alt="Máy sấy tóc">
+                    <h4>MÁY SẤY TÓC</h4>
+                    <p class="price">550.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="650000">
+                    <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/331852/sac-du-phong-polymer-10000mah-khong-day-magnetic-type-c-pd-20w-ugreen-pb206-thumb-1-638754904736185463-600x600.jpg" alt="Sạc dự phòng">
+                    <h4>SẠC DỰ PHÒNG</h4>
+                    <p class="price">650.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card electronics" data-price="2800000">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSK_8AzPtFc_-ITSuli0tnLO0TuGkKBldCvlWkEfcmRioDpOp184TaPWi9T-9FWT8BPoaMTIVXFNiyPszCPLq_ZJpjWivY-jVuG6tEqwEBynF4Y6lrLOU7RKuOW5C4ASVcPgjfonQ&usqp=CAc" alt="Quạt điều hòa">
+                    <h4>QUẠT ĐIỀU HÒA</h4>
+                    <p class="price">2.800.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="container">
+                <div class="footer-info-items">
+                    <div class="footer-info-item">
+                        <div class="info-icon">🚚</div>
+                        <div class="info-content">
+                            <h4>MIỄN PHÍ VẬN CHUYỂN</h4>
+                            <p>với đơn hàng trên 3 triệu</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">🔄</div>
+                        <div class="info-content">
+                            <h4>ĐỔI TRẢ HÀNG</h4>
+                            <p>trong vòng 3 ngày</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">💰</div>
+                        <div class="info-content">
+                            <h4>HOÀN TIỀN</h4>
+                            <p>nếu có lỗi</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>HỖ TRỢ 24/7</h4>
+                            <p>04.6674.2332</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-nav">
+                    <div class="footer-nav-item">
+                        <a href="home.html">TRANG CHỦ</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="gioithieu.html">GIỚI THIỆU</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">SẢN PHẨM</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">TIN TỨC</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">LIÊN HỆ</a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>123 Đường ABC, Quận XYZ, TP. Huế</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>0234.567.8910</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contact@betshop.vn</span>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📧</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">📱</a>
+                            <a href="#" class="social-icon">💼</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modal-product-name"></span>
+                <span class="close-button">×</span>
+            </div>
+            <div class="modal-body">
+                <p id="cart-summary"></p>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Thông tin sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="continue-shopping">Tiếp tục mua hàng</a>
+                <div class="total-price-section">
+                    Tổng tiền: <span id="total-price"></span>
+                </div>
+                <button class="checkout-button">Tiến hành đặt hàng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
