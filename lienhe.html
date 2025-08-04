@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - BETSHOP</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">BETSHOP</a>
+            </div>
+            <form id="search-form" class="search-bar">
+                <input id="search-input" type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit">🔍</button>
+            </form>
+            <div class="user-actions">
+                <div class="cart-dropdown-container">
+                    <a href="#" id="cart-link">🛒<span id="cart-count"></span></a>
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <div class="cart-dropdown-header">
+                            <span>Giỏ hàng</span>
+                            <span id="cart-item-count">(3) sản phẩm</span>
+                        </div>
+                        <div class="cart-dropdown-items" id="cart-dropdown-items">
+                            </div>
+                        <div class="cart-dropdown-footer">
+                            <div class="cart-total">
+                                <span>Tổng tiền: <span id="dropdown-total-price">29.490.000đ</span></span>
+                            </div>
+                            <button class="view-cart-btn" id="view-cart-btn">GIỎ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="login-button">Đăng nhập</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="home.html?filter=all">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#">Sản phẩm ▾</a>
+                    <div class="dropdown-content">
+                         <a href="home.html?filter=kitchen" data-filter="kitchen">Đồ dùng nhà bếp</a>
+                        <a href="home.html?filter=cleaning" data-filter="cleaning">Đồ dùng vệ sinh</a>
+                        <a href="home.html?filter=electronics" data-filter="electronics">Thiết bị điện</a>
+                    </div>
+                </li>
+                <li><a href="#">Khuyến mãi</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li> </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="home.html">Trang chủ</a> / Liên hệ
+            </div>
+            <div class="contact-content">
+                <h1>Liên Hệ Với Chúng Tôi</h1>
+
+                <div class="contact-info">
+                    <h2>Thông tin liên hệ</h2>
+                    <p>Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, đừng ngần ngại liên hệ với chúng tôi qua biểu mẫu hoặc thông tin dưới đây.</p>
+                    <p><strong>Địa chỉ:</strong> 123 Đường ABC, Quận XYZ, TP. Huế</p>
+                    <p><strong>Điện thoại:</strong> 0234.567.8910</p>
+                    <p><strong>Email:</strong> contact@betshop.vn</p>
+                    <p><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 6: 9:00 AM - 5:00 PM</p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" action="#" method="POST">
+                        <label for="fullName">Họ và Tên:</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên của bạn" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email của bạn" required>
+
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn">
+
+                        <label for="comments">Bình luận/Góp ý:</label>
+                        <textarea id="comments" name="comments" placeholder="Viết bình luận hoặc góp ý của bạn tại đây" required></textarea>
+
+                        <button type="submit">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="container">
+                <div class="footer-info-items">
+                    <div class="footer-info-item">
+                        <div class="info-icon">🚚</div>
+                        <div class="info-content">
+                            <h4>MIỄN PHÍ VẬN CHUYỂN</h4>
+                            <p>với đơn hàng trên 3 triệu</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">🔄</div>
+                        <div class="info-content">
+                            <h4>ĐỔI TRẢ HÀNG</h4>
+                            <p>trong vòng 3 ngày</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">💰</div>
+                        <div class="info-content">
+                            <h4>HOÀN TIỀN</h4>
+                            <p>nếu có lỗi</p>
+                        </div>
+                    </div>
+                    <div class="footer-info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>HỖ TRỢ 24/7</h4>
+                            <p>04.6674.2332</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-nav">
+                    <div class="footer-nav-item">
+                        <a href="home.html">TRANG CHỦ</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="gioithieu.html">GIỚI THIỆU</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">SẢN PHẨM</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="#">TIN TỨC</a>
+                    </div>
+                    <div class="footer-nav-item">
+                        <a href="lienhe.html">LIÊN HỆ</a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>123 Đường ABC, Quận XYZ, TP. Huế</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>0234.567.8910</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contact@betshop.vn</span>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📧</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">📱</a>
+                            <a href="#" class="social-icon">💼</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modal-product-name">Giỏ hàng</span>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="cart-summary"></p>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Thông tin sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="continue-shopping">Tiếp tục mua hàng</a>
+                <div class="total-price-section">
+                    Tổng tiền: <span id="total-price"></span>
+                </div>
+                <button class="checkout-button">Tiến hành đặt hàng</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
